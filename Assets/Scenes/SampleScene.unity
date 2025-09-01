@@ -186,7 +186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'p1Speed
+  m_text: 'p1Height
 
 '
   m_isRightToLeft: 0
@@ -278,9 +278,9 @@ GameObject:
   - component: {fileID: 98729506}
   - component: {fileID: 98729505}
   - component: {fileID: 98729504}
-  - component: {fileID: 98729511}
   - component: {fileID: 98729509}
   - component: {fileID: 98729512}
+  - component: {fileID: 98729513}
   m_Layer: 0
   m_Name: Paddle1
   m_TagString: Paddle
@@ -415,24 +415,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &98729511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98729503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9df1e92c71ab7745a7ca05d668713fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeyUp: 119
-  KeyDown: 115
-  minY: -4.2
-  maxY: 4.2
-  speed: 7
-  spriteRen: {fileID: 98729505}
 --- !u!50 &98729512
 Rigidbody2D:
   serializedVersion: 4
@@ -460,6 +442,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &98729513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98729503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9df1e92c71ab7745a7ca05d668713fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyUp: 119
+  KeyDown: 115
+  minY: -4.2
+  maxY: 4.2
+  speed: 7
+  spriteRen: {fileID: 98729505}
 --- !u!1 &114257140 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1856894964361666415, guid: cc87c8152de360c448c867f9801330ed, type: 3}
@@ -844,7 +844,7 @@ MonoBehaviour:
   btnExit: {fileID: 1048527259}
   btnCreditsBack: {fileID: 2066831414}
   btnSettingsBack: {fileID: 913802569}
-  paddle1: {fileID: 98729511}
+  paddle1: {fileID: 0}
   speedSliderP1: {fileID: 1072640509}
   heightSliderP1: {fileID: 753708272}
   sliderText1: {fileID: 1795667855}
@@ -3506,10 +3506,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929517104855788881, guid: ba5cb45b8291ea94e84def189766750b, type: 3}
       propertyPath: m_text
-      value: 'p1Height
+      value: 'p1Speed
+
 
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929517104855788881, guid: ba5cb45b8291ea94e84def189766750b, type: 3}
+      propertyPath: m_fontSize
+      value: 44.75
       objectReference: {fileID: 0}
     - target: {fileID: 7321492265282906411, guid: ba5cb45b8291ea94e84def189766750b, type: 3}
       propertyPath: m_AnchoredPosition.y

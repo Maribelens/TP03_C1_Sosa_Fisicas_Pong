@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class UiMainMenu : MonoBehaviour
 {
@@ -23,14 +24,14 @@ public class UiMainMenu : MonoBehaviour
     [SerializeField] private Slider speedSliderP1;
     [SerializeField] private Slider heightSliderP1;
     //[SerializeField] private Slider p1R, p1G, p1B;
-    [SerializeField] private TextMeshProUGUI sliderText1 = null;
+    [SerializeField] private TextMeshProUGUI speedText1 = null;
 
     [Header("Settings Player 2")]
     [SerializeField] private InputMovement paddle2;
     [SerializeField] private Slider heightSliderP2;
     [SerializeField] private Slider speedSliderP2;
     //[SerializeField] private Slider p2R, p2G, p2B;
-    [SerializeField] private TextMeshProUGUI sliderText2 = null;
+    [SerializeField] private TextMeshProUGUI speedText2 = null;
 
     //private float initialValue = 7f;
     private bool showDecimalSpeed = true;
@@ -63,8 +64,21 @@ public class UiMainMenu : MonoBehaviour
 
     private void Start()
     {
-        speedSliderP1.value = paddle1.speed;
-        speedSliderP2.value = paddle2.speed;
+
+        if (paddle1 != null)
+        {
+            speedSliderP1.value = paddle1.speed;
+            heightSliderP1.value = paddle1.transform.localScale.y;
+            //Color c1 = paddle1.GetComponent<SpriteRenderer>().color;
+            //p1R.value = c1.r; p1G.value = c1.g; p1B.value = c1.b;
+        }
+        if (paddle2 != null)
+        {
+            speedSliderP2.value = paddle2.speed;
+            heightSliderP2.value = paddle2.transform.localScale.y;
+            //Color c2 = paddle2.GetComponent<SpriteRenderer>().color;
+            //p2R.value = c2.r; p2G.value = c2.g; p2B.value = c2.b;
+        }
     }
 
     private void Update()
@@ -149,18 +163,18 @@ public class UiMainMenu : MonoBehaviour
     {
         paddle1.speed = speed;
         if (showDecimalSpeed)
-            sliderText1.SetText(speed.ToString("1"));
+            speedText1.SetText(speed.ToString("1"));
         else
-            sliderText1.SetText(speed.ToString("10"));
+            speedText1.SetText(speed.ToString("15"));
     }
 
-    private void OnSpeedP2Changed(float speed)
+    private void OnSpeedP2Changed(float newSpeed)
     {
-        paddle2.speed = speed;
+        paddle2.speed = newSpeed;
         if (showDecimalSpeed)
-            sliderText2.SetText(speed.ToString("1"));
+            speedText2.SetText(newSpeed.ToString("1"));
         else
-            sliderText2.SetText(speed.ToString("10"));
+            speedText2.SetText(newSpeed.ToString("15"));
     }
 
 }
