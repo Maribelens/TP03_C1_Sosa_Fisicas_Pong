@@ -7,6 +7,8 @@ TagManager:
   - Goal
   - Wall
   - Paddle
+  - Ball
+  - Goal2
   layers:
   - Default
   - TransparentFX
@@ -15,11 +17,11 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerWall
+  - Player
+  - Ball
+  - Wall
+  - Goal
   - 
   - 
   - 
